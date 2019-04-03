@@ -65,7 +65,7 @@ class PHPSpammer
     private function log($message)
     {
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/logs')) {
-            mkdir($_SERVER['DOCUMENT_ROOT'] . '/logs/', 0777, true);
+            mkdir($_SERVER['DOCUMENT_ROOT'] . '/logs/', 0644, true);
         }
         $date = date('d.m.Y H:i:s');
         $newFile = fopen("logs/log" . $date . ".txt", "w");
