@@ -9,6 +9,13 @@ require "../vendor/autoload.php";
 
 class PHPSpammer
 {
+    private $username;
+    private $password;
+    private $from;
+    private $subject;
+    private $emails;
+    private $log;
+    private $attachments;
 
     /**
      * PHPSpammer constructor.
@@ -28,7 +35,7 @@ class PHPSpammer
         $this->subject = $subject;
         $this->emails = $emails;
         $this->log = $log;
-        $this->attachments = array();
+        $this->attachments = [];
     }
 
 
