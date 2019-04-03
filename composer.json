@@ -18,7 +18,7 @@
 
   "autoload": {
     "psr-4": {
-      "Stepan7\\Spammer\\": "src/App/Spammer"
+      "Stepan7\\Spammer\\": "src/"
     }
   }
 }
