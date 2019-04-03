@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Spammer;
+namespace Stepan7\Spammer;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -19,7 +19,8 @@ class PHPSpammer
      * @param string $emails
      * @param bool|null $log
      */
-    public function __construct(string $username, string $password, string $from, string $subject, string $emails, bool $log = null)
+    public function __construct(string $username, string $password, string $from, string $subject, string $emails, bool
+    $log = null)
     {
         $this->username = $username;
         $this->password = $password;
