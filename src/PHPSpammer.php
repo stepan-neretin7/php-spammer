@@ -5,7 +5,7 @@ namespace Stepan7\Spammer;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-require "vendor/autoload.php";
+require "../vendor/autoload.php";
 
 class PHPSpammer
 {
