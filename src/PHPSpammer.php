@@ -1,14 +1,21 @@
 <?php
 
 
-namespace App\Spammer;
+namespace Stepan7\Spammer;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-require "vendor/autoload.php";
+require "../vendor/autoload.php";
 
 class PHPSpammer
 {
+    private $username;
+    private $password;
+    private $from;
+    private $subject;
+    private $emails;
+    private $log;
+    private $attachments;
 
     /**
      * PHPSpammer constructor.
@@ -19,7 +26,8 @@ class PHPSpammer
      * @param string $emails
      * @param bool|null $log
      */
-    public function __construct(string $username, string $password, string $from, string $subject, string $emails, bool $log = null)
+    public function __construct(string $username, string $password, string $from, string $subject, string $emails, bool
+    $log = null)
     {
         $this->username = $username;
         $this->password = $password;
@@ -27,7 +35,7 @@ class PHPSpammer
         $this->subject = $subject;
         $this->emails = $emails;
         $this->log = $log;
-        $this->attachments = array();
+        $this->attachments = [];
     }
 
 
@@ -57,7 +65,7 @@ class PHPSpammer
     private function log($message)
     {
         if (!file_exists($_SERVER['DOCUMENT_ROOT'] . '/logs')) {
-            mkdir($_SERVER['DOCUMENT_ROOT'] . '/logs/', 0777, true);
+            mkdir($_SERVER['DOCUMENT_ROOT'] . '/logs/', 0644, true);
         }
         $date = date('d.m.Y H:i:s');
         $newFile = fopen("logs/log" . $date . ".txt", "w");
